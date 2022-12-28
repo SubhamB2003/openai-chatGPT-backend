@@ -30,7 +30,7 @@ app.post("/", async (req, res) => {
             presence_penalty: 0,
         });
 
-        res.status(200).json(response.data.choices[0].text);
+        res.status(200).send({ bot: response.data.choices[0].text });
 
     } catch (err) {
         res.status(400).json({ message: err.message + "____________-" });
